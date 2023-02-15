@@ -1,8 +1,10 @@
 import { initializeApp } from 'firebase/app';
-import {getAuth, onAuthStateChanged} from 'firebase/auth';
-import {getFirestore, provider} from 'firebase/firestore';
+import {getAuth} from 'firebase/auth';
 
-const firebaseApp = initializeApp({
+
+
+
+const firebaseConfig = {
   apiKey: "AIzaSyBHj3dsFGi1WoO3ZVpf8KpjyXQtdz9eh4s",
   authDomain: "disneyplus-clone-7f3e2.firebaseapp.com",
   projectId: "disneyplus-clone-7f3e2",
@@ -10,13 +12,8 @@ const firebaseApp = initializeApp({
   messagingSenderId: "41669402622",
   appId: "1:41669402622:web:f7855961f3c802256aeaaf",
   measurementId: "G-FGC7QDT94F"
-});
+};
 
-const auth = getAuth(firebaseApp);
-const db = getFirestore(firebaseApp);
-
-const provider = new firebaseApp.getAuth.Google.authProvider
-const storage = firebaseApp.storage();
-
-export{getAuth, provider, storage}
-export default db;
+//initialize firebase
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);

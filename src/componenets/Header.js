@@ -1,15 +1,16 @@
 import styled from "styled-components";
-import {getAuth} from 'firebase/auth';
+import { UserAuth } from "../context/AuthContext";
 
 
-const Header = (props) =>{
 
-    const handleAuth = () =>{
-        auth.signInWithPopup(provider).then((result) =>{
-            console.log(result)
-        }).catch((error) =>{
-            alert(error.message)
-        });
+const Header = () =>{
+    const {googleSignIn} = UserAuth();
+    const handleGoogleSignIn = async () =>{
+       try {
+        await googleSignIn();
+       } catch (error) {
+        console.log(error);
+       }
     };
     return( 
     <Nav>
@@ -42,7 +43,7 @@ const Header = (props) =>{
                 <span>HOME</span>
             </a>
         </NavMenu>
-        <Login onClick={handleAuth}>Login</Login>
+        <Login onClick={handleGoogleSignIn}>Login</Login>
     </Nav>
     );
 }
