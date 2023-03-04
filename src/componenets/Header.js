@@ -1,22 +1,56 @@
 import styled from "styled-components";
-import { UserAuth } from "../context/AuthContext";
+import { useDispatch, useSelector } from "react-redux";
+//import {useHistory} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+//import { UserAuth , provider} from "../context/AuthContext";
+import { auth, provider } from "../firebase";
+import { selectUserName, 
+         userPhoto, 
+         selectLoginDetails, 
+         selectUserPhoto,
+         setUserLoginDetails,
+} from "../features/user/userSlice";
 
 
 
-const Header = () =>{
-    const {googleSignIn} = UserAuth();
-    const handleGoogleSignIn = async () =>{
-       try {
-        await googleSignIn();
-       } catch (error) {
-        console.log(error);
-       }
+
+const Header = (props) =>{
+    const dispatch = useDispatch();
+    const navigate  =  useNavigate();
+    const userName = useSelector(selectUserName);
+    const userPhoto = useSelector(selectUserPhoto);
+    
+   // const {googleSignIn} = UserAuth();
+    const handleAuth = () =>{
+        auth
+        .signInWithPopup(provider)
+        .then((result) =>{
+            setUser(result.user)
+        })
+      .catch ((error) =>{
+        console.log(error.message);
+       });
+    };
+
+    const setUser = (user) =>{
+        dispatch(
+            setUserLoginDetails({
+                name: user.displayName,
+                emal: user.emal,
+                photo: user.photoURL,   
+            })
+        );
     };
     return( 
     <Nav>
         <Logo>
             <img src="/images/logo.svg " alt="Disney+"/>
         </Logo>
+
+        {!userName ? (
+         <Login onClick={handleAuth}> Login </Login>
+        ) : (
+        <>
         <NavMenu>
             <a href = "/series">
                 <img src="/images/series-icon.svg" alt="SERIES" />
@@ -43,10 +77,12 @@ const Header = () =>{
                 <span>HOME</span>
             </a>
         </NavMenu>
-        <Login onClick={handleGoogleSignIn}>Login</Login>
+        <UserImg src={userPhoto} alt={userName} />
+        </>
+    )}
     </Nav>
     );
-}
+};
 
 const Nav = styled.nav`
     position: fixed;
@@ -152,6 +188,10 @@ const Login = styled.a`
         color: #000;
         border-color: transparent;
     }
+`;
+
+const UserImg = styled.img`
+    height: 100%;
 `;
 
 
