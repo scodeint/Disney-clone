@@ -17,15 +17,15 @@ import { async } from "@firebase/util";
 
 const Header = (props) =>{
     const dispatch = useDispatch();
-    const history  =  useNavigate();
+    const navigate  =  useNavigate();
     const userName = useSelector(selectUserName);
     const userPhoto = useSelector(selectUserPhoto);
     
 useEffect(() =>{
     auth.onAuthStateChanged(async(user) =>{
         if(user){
-            setUser(user)
-            history.push("/home")
+            setUser(user);
+            navigate("/home");
         }
     })
 }, [userName]);
@@ -45,7 +45,7 @@ useEffect(() =>{
         .signOut()
         .then(() =>{
             dispatch(setSignOutState());
-            history.push("/");
+            navigate('/');
         })
         .catch((err) => alert(err.message));
     }
