@@ -100,7 +100,6 @@ const Wrap = styled.div`
             padding: 0;
             border:  1px solid rgba(249, 249, 249, 0.8);
             transition-duration: 300ms;
-
         }
     }
 `;
