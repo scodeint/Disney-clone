@@ -4,6 +4,7 @@ import Header from './componenets/Header';
 import './App.css';
 import { AuthContextProvider } from './context/AuthContext';
 import Home from './componenets/Home';
+import Detail from './componenets/Detail';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} /> 
             <Route path="/home" element={<Home />} />
+            <Route path="/detail/:id" element={<Detail />} />
           </Routes>
         </Router>
     </div>
