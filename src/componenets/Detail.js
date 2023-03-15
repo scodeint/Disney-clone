@@ -114,7 +114,7 @@ const Controls = styled.div`
 
 const Player = styled.button`
     font-size: 15px;
-    margin: 8px 22px 8px 8px;
+    margin: 8px 22px 8px 22px;
     padding: 0px 24px;
     height: 56px;
     border-radius: 4px;
@@ -141,7 +141,7 @@ const Player = styled.button`
         height: 45px;
         padding: 0px 12px;
         font-size: 12px;
-        margin: 0px 10px 0px 0px;
+        margin: 8px 22px 8px 22px;
 
         img{
             width: 25px;
@@ -211,7 +211,7 @@ const SubTitle = styled.div`
     color: rgb(249, 249, 249);
     font-size: 15px;
     min-height: 20px;
-    margin: 8px 22px 8px 8px;
+    margin: 8px 22px 8px 22px;
 
     @media(max-width: 768px){
         font-size: 12px;
@@ -223,7 +223,7 @@ const Description = styled.div`
     font-size: 20px;
     padding: 16px 0px;
     color: rgb(249, 249, 249);
-    margin: 8px 22px 8px 8px;
+    margin: 8px 22px 8px 22px;
 
     @media(max-width: 768px){
         font-size: 14px;
