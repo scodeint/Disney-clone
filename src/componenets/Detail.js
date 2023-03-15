@@ -59,10 +59,10 @@ const Detail = (props) =>{
 const Container = styled.div`
     position: relative;
     min-height: calc(100vh - 250px);
-    overflow: hidden;
+    overflow-x: hidden;
     display: block;
     top: 72px;
-    padding: o calc(3.5vm - 5px);
+    padding: 0 calc(3.5vm - 5px);
 `;
 
 const Background = styled.div`
@@ -108,13 +108,13 @@ const Controls = styled.div`
      align-items: center;
      display: flex;
      flex-flow: row nowrap;
-     mardin: 24px 0px;
+     mardin: 24px 8px;
      min-height: 56px;
 `;
 
 const Player = styled.button`
     font-size: 15px;
-    margin: 0px 22px 0px 0px;
+    margin: 8px 22px 8px 8px;
     padding: 0px 24px;
     height: 56px;
     border-radius: 4px;
@@ -126,7 +126,7 @@ const Player = styled.button`
     text-align: center;
     text-transformation: uppercase;
     background: rgb(249, 249, 249);
-    border: non;
+    border: none;
     color: rgb(0, 0, 0);
 
     img{
@@ -134,7 +134,7 @@ const Player = styled.button`
     }
 
     &:hover{
-        background: rgb(148, 148, 148);
+        background: rgb(198, 198, 198);
     }
 
     @media(max-width: 768px){
@@ -211,6 +211,7 @@ const SubTitle = styled.div`
     color: rgb(249, 249, 249);
     font-size: 15px;
     min-height: 20px;
+    margin: 8px 22px 8px 8px;
 
     @media(max-width: 768px){
         font-size: 12px;
@@ -222,6 +223,7 @@ const Description = styled.div`
     font-size: 20px;
     padding: 16px 0px;
     color: rgb(249, 249, 249);
+    margin: 8px 22px 8px 8px;
 
     @media(max-width: 768px){
         font-size: 14px;
