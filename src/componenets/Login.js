@@ -27,7 +27,7 @@ display: flex;
 text-direction: column;
 text-align: center;
 height: 100%;
-`
+`;
 
 const Content = styled.div`
 margin-bottom: 10vm;
@@ -41,7 +41,7 @@ align-items: center;
 flex-direction: column;
 padding: 80px 40px;
 height: 100%;
-`
+`;
 
 const BgImage = styled.div`
 height: 100%;
@@ -79,6 +79,9 @@ const CTALogoOne = styled.img`
     min-height: 1px;
     display: block;
     width: 100%;
+    @media(max-width: 768px){
+        width: 50%;
+            }
 `;
 
 const SignUp = styled.a`
@@ -96,6 +99,10 @@ const SignUp = styled.a`
    &:hover{
     background-color: #0483ee;
    }
+
+   @media(max-width: 768px){
+    width: 50%;
+        }
 `;
 
 const Description = styled.p`
@@ -104,6 +111,10 @@ const Description = styled.p`
    margin: 0 0 34px;
    line-height: 1.5;
    letter-spacing: 1.5px;
+
+   @media(max-width: 768px){
+    width: 50%;
+        }
 `;
 
 const CTALogoTwo = styled.img`
@@ -112,6 +123,11 @@ const CTALogoTwo = styled.img`
    display: inline-block;
    vertical-align: 
    width: 100%;
+
+   @media(max-width: 768px){
+    width: 50%;
+    margin-top: -20px;
+        }
 `;
 
 export default Login;
