@@ -91,7 +91,7 @@ const SignUp = styled.a`
    margin-bottom: 12px;
    width: 100%;
    letter-spacing: 1.5px;
-   font-sise: 19px;
+   font-size: 19px;
    padding: 16.5px 0;
    border: 1px solid transparent;
    border-radius: 4px;

@@ -1,9 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 //import { action } from "@remix-run/router";
 
-
-
-
 const initialState = {
     name: "",
     email: "",
